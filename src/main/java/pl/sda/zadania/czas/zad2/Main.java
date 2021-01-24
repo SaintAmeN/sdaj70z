@@ -6,4 +6,6 @@ package pl.sda.zadania.czas.zad2;
  * @Project zadania_zdalne_pl_70
  */
 public class Main {
+    // Napisz aplikację, która wyświetli "różnicę" dwóch dat w formacie: "years: , months: ,days: "
+    // Wskazówka: skorzystaj z klasy Period:Period period = Period.between(data_start, data_stop);
 }
