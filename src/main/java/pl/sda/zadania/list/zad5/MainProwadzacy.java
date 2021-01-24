@@ -53,7 +53,7 @@ public class MainProwadzacy {
 
         System.out.println("Lista kobiet linia pod linią:");
         for (Student student : listaStudentow) {
-            if (student.getPlec() == Płeć.KOBIETA) {
+            if (student.getPłeć() == Płeć.KOBIETA) {
                 System.out.println(student);
             }
         }
@@ -64,6 +64,8 @@ public class MainProwadzacy {
 
 
         System.out.println("Lista indeksów linia pod linią:");
-        //
+        for (Student student : listaStudentow) {
+            System.out.println(student.getNrIndeksu());
+        }
     }
 }

@@ -17,12 +17,12 @@ public class Student {
     private String nrIndeksu;
     private String imie;
     private String nazwisko;
-    private Płeć plec;
+    private Płeć płeć;
 
     public Student(String nrIndeksu, String imie, String nazwisko, Płeć plec) {
         this.nrIndeksu = nrIndeksu;
         this.imie = imie;
         this.nazwisko = nazwisko;
-        this.plec = plec;
+        this.płeć = plec;
     }
 }
