@@ -6,4 +6,6 @@ package pl.sda.zadania.list.zad5;
  * @Project zadania_zdalne_pl_70
  */
 public enum Płeć {
+    KOBIETA,
+    MEZCZYZNA;
 }
