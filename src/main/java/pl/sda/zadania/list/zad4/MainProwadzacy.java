@@ -1,9 +1,6 @@
 package pl.sda.zadania.list.zad4;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @Author amen
@@ -49,17 +46,21 @@ public class MainProwadzacy {
         System.out.println("Wartośco: " + strings);
         System.out.println("Średnia: " + średnia);
 
-//        Może wystąpić: Exception in thread "main" java.util.ConcurrentModificationException
-//        for (String wartosc : strings) {
-//            // przetworzenie z tekstu na liczbę
-//            int liczba = Integer.parseInt(wartosc);
-//
-//            // jeśli wartość jest wyższa od średniej
-//            if(liczba > średnia){
-//                // usuń tą wartość z listy
-//                strings.remove(liczba);
-//            }
-//        }
+//        Może wystąpić: Exception in thread "main" java.util.ConcurrentModificationException - niejawny
+        try {
+            for (String wartosc : strings) {
+                // przetworzenie z tekstu na liczbę
+                int liczba = Integer.parseInt(wartosc);
+
+                // jeśli wartość jest wyższa od średniej
+                if (liczba > średnia) {
+                    // usuń tą wartość z listy
+                    strings.remove(liczba);
+                }
+            }
+        } catch (ConcurrentModificationException cme){
+            System.err.println("Oj oj oj, nieładnie...");
+        }
 
         // Opcja 1.
 //        String[] kopia = strings.toArray(new String[strings.size()]);
