@@ -1,5 +1,8 @@
 package pl.sda.zadania.enumerated.zad4;
 
+import pl.sda.zadania.enumerated.zad4.prowadzacy.Rower;
+import pl.sda.zadania.enumerated.zad4.prowadzacy.TypRoweru;
+
 /**
  * @Author amen
  * @Created 30.01.2021 11:21
@@ -19,5 +22,8 @@ public class MainProwadzacy {
          - Stwórz main’a, w metodzie main stwórz 3 rowery, przechowaj je w liście i wypisz je pętlą for.
          **/
 
+        Rower rower = new Rower(5, TypRoweru.TANDEM, "Maxi Tandemaxi");
+
+        rower.wypiszInformacjeORowerze();
     }
 }
