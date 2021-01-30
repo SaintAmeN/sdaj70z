@@ -1,5 +1,7 @@
 package pl.sda.zadania.exceptions.zad1;
 
+import pl.sda.zadania.exceptions.zad2.CholeroProwadzacyException;
+
 /**
  * @Author amen
  * @Created 30.01.2021 12:48
@@ -14,5 +16,6 @@ public class Main {
      * Wariant 2: Zastosuj instrukcję try-catch     (wywołujemy metodę i przechwycenie odbywa się w main)
      */
     public static void main(String[] args) {
+        throw new CholeroProwadzacyException();
     }
 }
