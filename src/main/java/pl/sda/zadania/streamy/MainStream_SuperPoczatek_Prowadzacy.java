@@ -59,8 +59,8 @@ public class MainStream_SuperPoczatek_Prowadzacy {
 //        List<Programmer> maleProgrammers = programmers.stream()
 //                .filter(new Predicate<Programmer>() {
 //                    @Override
-//                    public boolean test(Programmer programmerX) {
-//                        return programmerX.getPerson().isMale();
+//                    public boolean test(Programmer dupaANieInformatyk) {
+//                        return dupaANieInformatyk.getPerson().isMale();
 //                    }
 //                })
 //                .collect(Collectors.toList());
@@ -80,7 +80,7 @@ public class MainStream_SuperPoczatek_Prowadzacy {
 //                .collect(Collectors.toList());
 
         List<Programmer> maleProgrammers = programmers.stream()
-                .filter(programmerX -> programmerX.getPerson().isMale())
+                .filter(dupaANieInformatyk -> dupaANieInformatyk.getPerson().isMale())
                 .collect(Collectors.toList());
     }
 }
