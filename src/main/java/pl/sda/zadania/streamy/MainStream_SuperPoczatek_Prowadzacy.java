@@ -1,9 +1,6 @@
 package pl.sda.zadania.streamy;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -114,5 +111,20 @@ public class MainStream_SuperPoczatek_Prowadzacy {
 
 //########################################################################
 //        c) uzyskaj Optional<Person> z dorosłym Jackiem findAny/findfirst
+        Optional<Person> doroslyJacek = programmers.stream()
+                .map(programmer -> programmer.getPerson())
+                .filter(person -> person.getFirstName().equals("Jacek"))
+                .filter(person -> person.getAge() >= 18)
+                .findFirst();
+
+        if( doroslyJacek.isPresent() ){
+            System.out.println("Udalo sie znalezc: "+ doroslyJacek.get());
+        }else{
+            System.out.println("Sie znalezc: "+ doroslyJacek.get());
+        }
+
+
+        System.out.println("Odpowiedz, zad b: " + dorosleKobietyProgrammers);
+
     }
 }
