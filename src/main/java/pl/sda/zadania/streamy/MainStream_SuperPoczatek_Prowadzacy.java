@@ -50,7 +50,7 @@ public class MainStream_SuperPoczatek_Prowadzacy {
          * b) uzyskaj listę dorosłych kobiet (filter)
          * c) uzyskaj Optional<Person> z dorosłym Jackiem findAny/findfirst
          * d) uzyskaj listę wszystkich nazwisk osób, które są w przedziale wiekowym: 15-19 (filter)
-         * e)* uzyskaj sumę wieku wszystkich osób (sum)
+         * e)* uzyskaj sumę wieku wszystkich osób (maptoint, sum)
          * f)* uzyskaj średnią wieku wszystkich mężczyzn (average)
          * g)** znajdź nastarszą osobę w liście (findFirst)
          */
@@ -126,5 +126,26 @@ public class MainStream_SuperPoczatek_Prowadzacy {
 
         System.out.println("Odpowiedz, zad b: " + dorosleKobietyProgrammers);
 
+//########################################################################
+//         * c) uzyskaj Optional<Person> z dorosłym Jackiem findAny/findfirst
+//         * d) uzyskaj listę wszystkich nazwisk osób, które są w przedziale wiekowym: 15-19 (filter)
+        List<String> namesOfYoung = programmers.stream()
+                .filter(programmer -> (programmer.getPerson().getAge() >= 15) && (programmer.getPerson().getAge() <= 19))
+                .map(programmer -> programmer.getPerson().getLastName())
+                .collect(Collectors.toList());
+        System.out.println("d: " + namesOfYoung);
+
+//########################################################################
+//        e)* uzyskaj sumę wieku wszystkich osób (maptoint, sum)
+        int sum = programmers.stream()
+                .mapToInt(programmer -> programmer.getPerson().getAge())
+//                .count()          // zlicz
+//                .sum()            // zsumuj
+//                .average()        // średnia
+//                .distinct()       // niewpowtarzalne
+//                .max()            // max
+                .sum();            // zsumuj
+
+        System.out.println("e: " + sum);
     }
 }
