@@ -1,5 +1,7 @@
 package pl.sda.zadania.streamy;
 
+import pl.sda.zadania.enumerated.zad4.prowadzacy.Rower;
+
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -117,10 +119,10 @@ public class MainStream_SuperPoczatek_Prowadzacy {
                 .filter(person -> person.getAge() >= 18)
                 .findFirst();
 
-        if( doroslyJacek.isPresent() ){
-            System.out.println("Udalo sie znalezc: "+ doroslyJacek.get());
-        }else{
-            System.out.println("Sie znalezc: "+ doroslyJacek.get());
+        if (doroslyJacek.isPresent()) {
+            System.out.println("Udalo sie znalezc: " + doroslyJacek.get());
+        } else {
+            System.out.println("Sie znalezc: " + doroslyJacek.get());
         }
 
 
@@ -147,5 +149,29 @@ public class MainStream_SuperPoczatek_Prowadzacy {
                 .sum();            // zsumuj
 
         System.out.println("e: " + sum);
+
+
+//########################################################################
+//        f)* uzyskaj średnią wieku wszystkich mężczyzn (average)
+//        Optional<Double>
+        OptionalDouble averageOpt = programmers.stream()
+                .filter(p -> p.getPerson().isMale())
+                .mapToInt(programmer -> programmer.getPerson().getAge())
+                .average();            // zsumuj
+
+
+        if (averageOpt.isPresent()) { // jeśli jest dostępna średnia
+            double average = averageOpt.getAsDouble();
+
+            System.out.println("f (avg): " + average);
+        } else {
+            System.out.println("f (avg not available).");
+        }
+
+        Rower r = new Rower();
+        String nazwa = r.getNazwaRoweru();
+        if (nazwa != null) {
+            System.out.println(nazwa.charAt(3));
+        }
     }
 }
