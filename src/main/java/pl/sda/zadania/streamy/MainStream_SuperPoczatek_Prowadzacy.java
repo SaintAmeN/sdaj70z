@@ -3,6 +3,7 @@ package pl.sda.zadania.streamy;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -79,8 +80,39 @@ public class MainStream_SuperPoczatek_Prowadzacy {
 //                )
 //                .collect(Collectors.toList());
 
+//        List<Programmer> maleProgrammers = programmers.stream()
+//                .filter(dupaANieInformatyk -> (!dupaANieInformatyk.getPerson().isMale()) && (false) )
+//                .collect(Collectors.toList());
+
         List<Programmer> maleProgrammers = programmers.stream()
                 .filter(dupaANieInformatyk -> dupaANieInformatyk.getPerson().isMale())
                 .collect(Collectors.toList());
+
+//####################################################
+//        * b) uzyskaj listę dorosłych kobiet (filter)
+//        List<Programmer> dorosleKobietyProgrammers = programmers.stream()
+//                .filter(new Predicate<Programmer>() {
+//                    @Override
+//                    public boolean test(Programmer programmer) {
+//                        return !programmer.getPerson().isMale();
+//                    }
+//                })
+//                .filter(new Predicate<Programmer>() {
+//                    @Override
+//                    public boolean test(Programmer programmer) {
+//                        return programmer.getPerson().getAge() >= 18;
+//                    }
+//                })
+//                .collect(Collectors.toList());
+
+        List<Programmer> dorosleKobietyProgrammers = programmers.stream()
+                .filter(programmer -> !programmer.getPerson().isMale() && programmer.getPerson().getAge() >= 18)
+//                .filter(programmer -> !programmer.getPerson().isMale())
+//                .filter(programmer -> programmer.getPerson().getAge() >= 18)
+                .collect(Collectors.toList());
+        System.out.println("Odpowiedz, zad b: " + dorosleKobietyProgrammers);
+
+//########################################################################
+//        c) uzyskaj Optional<Person> z dorosłym Jackiem findAny/findfirst
     }
 }
